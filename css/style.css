@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+input,
+button,
+textarea {
+  background-color: #fff;
+  border: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  font-family: "arial black", Arial, Helvetica, sans-serif;
+  background-color: #fff;
+}
+
+.heading__primary-span {
+  position: relative;
+  color: #ff2876;
+  font-size: clamp(7rem, 8vw, 15rem);
+  text-shadow: -0.1rem 0 0 rgba(0, 0, 0, 0.2);
+}
+.heading__primary-span::before {
+  content: attr(data-title);
+  position: absolute;
+  left: 0;
+  transform: rotateY(25deg);
+  transform-origin: left;
+  z-index: 2;
+  transition: 0.6s cubic-bezier(0, 1.88, 0.83, 0.67);
+  color: #fff;
+}
+.heading__primary-span::after {
+  content: attr(data-title);
+  position: absolute;
+  left: 0;
+  transform: rotateY(5deg) scale(1.07, 1) skew(3deg);
+  transform-origin: left;
+  z-index: 1;
+  opacity: 0.5;
+  transition: 0.8s cubic-bezier(0, 1.88, 0.83, 0.67);
+  color: rgba(0, 0, 0, 0.1);
+}
+.heading__primary-span:hover::before {
+  transform: perspective(100rem) rotateY(-45deg);
+}
+.heading__primary-span:hover::after {
+  transform: rotateY(0) scale(1.11, 1) skewY(6deg);
+}
+
+.heading__secondary {
+  color: #ff2876;
+  font-size: clamp(5rem, 6vw, 10rem);
+  letter-spacing: -0.2rem;
+  text-shadow: -0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.7);
+}
